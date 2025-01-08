@@ -1,0 +1,16 @@
+So far in this code-along there is a User model, but have no special way to create
+users to the website besides the terminal. We want to customize a nice looking html page, 
+allowing users to register to the website. To achieve this we have to customize an HTML form,
+and we need this form to be smart enough to check certain things to see if the information is valid.
+
+Examples: Cannot create a user if there already exists one with the same name,
+or if the password length does not meet the requirements of the website. 
+
+Flask has a built-in package to create forms which allows us to display it nicer in our HTML template.
+
+The packages to install: 
+
+pip install flask-wtf - allows us to create nice looking forms
+pip install wtforms
+
+Then we create a forms.py file and each form will be stored there.
