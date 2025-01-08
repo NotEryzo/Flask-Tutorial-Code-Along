@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+    Market Page
+{% endblock %}
+
+{% block content %}
+    <!-- Bootstrap classes which give more options for design. Table-hover - Hover effect. Table-dark - Dark effect  -->
+    <table class="table table-hover table-dark">
+        <thead> <!-- Table head. -->
+            <tr> <!-- Table row. -->
+                <!-- Your Columns HERE -->
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Barcode</th>
+                <th scope="col">Price</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>  <!-- Table body. -->
+            <!-- Your rows inside the table HERE: --> 
+            {% for item in items %}  <!--  % means we are calling a logic code. -->
+                <tr>
+                <!-- Double curly bracket is a variable block. -->
+                    <td>{{ item.id }}</td>  <!-- Table data. -->
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.barcode }}</td>
+                    <td>{{ item.price }}$</td>
+                    <td>
+                        <button class="btn btn-outline btn-info">More Info</button> <!-- btn-info is a blue button. -->
+                        <button class="btn btn-outline btn-success">Purchase this Item</button> <!-- btn-success is a green button. -->
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
